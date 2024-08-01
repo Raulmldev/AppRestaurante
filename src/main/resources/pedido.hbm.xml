@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hibernate-mapping>
+
+	<class name ="modelo.Pedido" table="pedido" catalog="proyecto_restaurante">
+		
+		<id name = "idPedido" type="java.lang.String">
+			
+			<column name="PEDIDO_ID"/>
+					
+		</id>
+								
+		<property name="metodoPago" column="METODO_PAGO" type="java.lang.String"></property>
+		
+		<property name="nombreProductoSolicitado" column="NOMBRE_PRODUCTO_SOLICITADO" type="java.lang.String"></property>
+		
+		<property name="cantidadProductoSolicitado" column="CANTIDAD_PRODUCTO_SOLICITADO" type="int"></property>
+		
+		<property name="totalTicketPedido" column="TOTAL_TICKET_PEDIDO" type="double"></property>
+		
+		 <!-- Definición de la relación de clave externa con la tabla Cliente -->
+        <many-to-one name="idCliente" class="modelo.Cliente" column="CLIENTE_ID" not-null="true"/>
+        
+        <!-- Definición de la relación de clave externa con la tabla Producto -->
+        <many-to-one name="idProducto" class="modelo.Producto" column="PRODUCTO_ID" not-null="true"/>
+				
+	</class>
+
+</hibernate-mapping>

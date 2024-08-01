@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping>
+
+	<class name ="modelo.Proveedor" table="proveedor" catalog="proyecto_restaurante">
+		
+		<id name = "idProveedor" type="java.lang.String">
+		
+			<column name="PROVEEDOR_ID"/>
+				
+		</id>
+	
+		<property name="nombreProveedor" column="NOMBRE_PROVEEDOR" type="java.lang.String"></property>
+		
+		<property name="telefonoProveedor" column="TELEFONO_PROVEEDOR" type="java.lang.String"></property>
+		
+		<property name="emailProveedor" column="EMAIL_PROVEEDOR" type="java.lang.String"></property>
+		
+		<property name="precioCompraProducto" column="PRECIO_COMPRA_PRODUCTO" type="double"></property>
+		
+		<property name="cantidadCompraProducto" column="CANTIDAD_COMPRA_PRODUCTO" type="int"></property>
+		
+		<!-- Definición de la relación de clave externa con la tabla Producto -->
+           <many-to-one name="idProducto" class="modelo.Producto" column="PRODUCTO_ID" not-null="true"/>
+		
+	</class>	
+
+</hibernate-mapping>

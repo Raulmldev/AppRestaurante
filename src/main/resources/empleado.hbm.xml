@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping>
+
+	<class name ="modelo.Empleado" table="empleado" catalog="proyecto_restaurante">
+		
+		<id name = "idEmpleado" type="java.lang.String">
+			<column name="EMPLEADO_ID"/>
+			
+		</id>
+		
+		<property name="nombreEmpleado" column="NOMBRE_EMPLEADO" type="java.lang.String"></property>
+		
+		<property name="empleadoDNI" column="EMPLEADO_DNI" type="java.lang.String"></property>
+		
+		<property name="direccionEmpleado" column="DIRECCION_EMPLEADO" type="java.lang.String"/>
+		
+		<property name="telefonoEmpleado" column="TELEFONO_EMPLEADO" type="java.lang.String"></property>
+		
+		<property name="emailEmpleado" column="EMAIL_EMPLEADO" type="java.lang.String"></property>
+		
+		<property name="rolEmpleado" column="ROL_EMPLEADO" type="java.lang.String"></property>
+		
+		<property name="salarioEmpleado" column="SALARIO_EMPLEADO" type="double"></property>
+		
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+	
+	<hibernate-configuration>
+	
+		<session-factory>
+		
+		<property name= "dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name= "hbm2ddl.auto">update</property>
+		<property name= "connection.url">jdbc:mysql://127.0.0.1:3306/proyecto_restaurante</property>
+		<property name= "connection.username">root</property>
+		<property name= "connection.password">1234</property>
+		
+		 <!-- Agregar la propiedad para habilitar la transformación de hbm.xml -->
+        <property name="hibernate.transform_hbm_xml.enabled">true</property>
+		
+		<mapping resource ="cliente.hbm.xml"/>
+		<mapping resource ="empleado.hbm.xml"/>		
+		<mapping resource ="pedido.hbm.xml"/>
+		<mapping resource ="detallepedido.hbm.xml"/>
+		<mapping resource ="producto.hbm.xml"/>
+		<mapping resource ="proveedor.hbm.xml"/>		
+		
+		</session-factory>
+	
+	</hibernate-configuration>

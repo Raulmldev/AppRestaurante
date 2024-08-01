@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hibernate-mapping>
+
+	<class name ="modelo.Producto" table="producto" catalog="proyecto_restaurante">
+		
+		<id name = "idProducto" type="java.lang.String">
+		
+			<column name="PRODUCTO_ID"/>
+					
+		</id>
+		
+		<property name="nombreProducto" column="NOMBRE_PRODUCTO" type="java.lang.String"></property>
+		
+		<property name="cantidadStock" column="CANTIDAD_STOCK" type="int"></property>
+		
+		<property name="precioVentaProducto" column="PRECIO_VENTA_PRODUCTO" type="double"></property>
+		
+	</class>
+
+</hibernate-mapping>

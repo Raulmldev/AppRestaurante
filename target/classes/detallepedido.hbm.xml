@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hibernate-mapping>
+
+	<class name ="modelo.DetallePedido" table="detalle_pedido" catalog="proyecto_restaurante">
+		
+		<id name = "idDetallePedido" type="java.lang.String">
+			<column name="DETALLE_PEDIDO_ID"/>
+				
+		</id>
+		
+		<property name="descripcion" column="DESCRIPCION" type="java.lang.String"></property>
+		
+		 <!-- Definición de la relación de clave externa con la tabla Cliente -->
+        <many-to-one name="idCliente" class="modelo.Cliente" column="CLIENTE_ID" not-null="true"/>
+        
+        <!-- Definición de la relación de clave externa con la tabla Producto -->
+        <many-to-one name="idPedido" class="modelo.Pedido" column="PEDIDO_ID" not-null="true"/>
+        
+        <!-- Definición de la relación de clave externa con la tabla Producto -->
+        <many-to-one name="idEmpleado" class="modelo.Empleado" column="Empleado_ID" not-null="true"/>
+				
+	</class>
+
+</hibernate-mapping>
